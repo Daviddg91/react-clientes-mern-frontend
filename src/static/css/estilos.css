@@ -1,0 +1,16 @@
+ 
+* {
+	box-sizing: border-box;
+}
+ 
+
+main {
+	max-width: 800px;
+	width: 90%;
+	margin: auto;
+	padding: 40px;
+}
+.displayNone{ display:none;}
+.displayBlock{display: block;}
+
+.btn-warning{color:black!important;}
