@@ -67,6 +67,8 @@ export const startChecking = () => {
         const body = await resp.json();
 
         if( body.ok ) {
+            console.log(body);
+            //console.log(body.name);
             localStorage.setItem('token', body.token );
             localStorage.setItem('token-init-date', new Date().getTime() );
             
@@ -77,6 +79,28 @@ export const startChecking = () => {
         } else {
             dispatch( checkingFinish() );
         }
+    }
+}
+export const startCheckRefreshlogin = () => {
+    return async(dispatch) => {
+
+        const resp = await fetchConToken( 'auth/isValidToken' );
+        const body = await resp.json();
+
+        if( body.ok ) {
+           // console.log(body);
+            //console.log(body.name);
+          //  localStorage.setItem('token', body.token );
+         //   localStorage.setItem('token-init-date', new Date().getTime() );
+            
+            dispatch( login({
+                uid: body.uid,
+                name: body.name
+            }) )
+        }else{
+            dispatch(startChecking());
+
+        } 
     }
 }
 

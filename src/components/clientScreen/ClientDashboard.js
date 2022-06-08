@@ -77,7 +77,7 @@ return (
             <th> <div>Edad</div></th>
             <th>Editar</th>
             <th>Eliminar</th>
-            
+             
           </tr>
              
             </thead>

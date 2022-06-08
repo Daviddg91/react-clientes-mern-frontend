@@ -47,7 +47,7 @@ function refreshPage() {
 
 useEffect( () => {
   setValidateErrors(objetoValidateErrors);
-  console.log(values)
+  //console.log(values)
   if (values.cp !== ''){
     values.cp = Number.parseInt(values.cp);
 
@@ -70,7 +70,7 @@ useEffect( () => {
     dni : 'required|isDni',
     cp: 'required|numeric|min:1000|max:999999',
   });
-  console.log(validateErrors);
+  //console.log(validateErrors);
   setValidateErrors(validateErrors);
   validateRepeatDni(values.dni)
 }, [values]);

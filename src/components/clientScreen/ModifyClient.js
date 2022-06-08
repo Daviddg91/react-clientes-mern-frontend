@@ -41,7 +41,7 @@ const dispatch = useDispatch();
     
     useEffect( () => {
       setValidateErrors(objetoValidateErrors);
-      console.log(values)
+      //console.log(values)
       if (values.cp !== ''){
         values.cp = Number.parseInt(values.cp);
     
@@ -64,7 +64,7 @@ const dispatch = useDispatch();
         dni : 'required|isDni',
         cp: 'required|numeric|min:1000|max:999999',
       });
-      console.log(validateErrors);
+      //console.log(validateErrors);
       setValidateErrors(validateErrors);
       validateRepeatDni(values.dni)
     }, [values]);
@@ -88,8 +88,8 @@ const dispatch = useDispatch();
               const fetchDniClient = await axios.get(url, request);
               if(fetchDniClient){
                 if(fetchDniClient.data.cliente.length > 0){
-                   console.log(dni)
-                   console.log(cliente.dni)
+                   //console.log(dni)
+                   //console.log(cliente.dni)
                    if(dni !== cliente.dni){
                     validateErrors.errors.dni = "El DNI esta repetido" ;
                     setValidateErrors(validateErrors);
